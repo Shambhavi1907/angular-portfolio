@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shambhavi Raj — Portfolio</title>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="MainController">
+  <!-- Background animation -->
+  <div class="background-animation">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section">
+    <div class="box home-box">
+      <div class="home-content">
+        <div class="about-side">
+          <h2 class="typing">Hi, I’m Shambhavi Raj</h2>
+          <p class="tagline">Front-End Developer | UI/UX Enthusiast</p>
+          <p class="about-text">
+            I’m a creative and detail-oriented front-end developer passionate about
+            building interactive and elegant web designs. I love bringing ideas to
+            life using HTML, CSS, and AngularJS. Currently pursuing
+            <b>B.Tech in CSE</b> at <b>Pimpri Chinchwad University, Pune, Maharashtra</b>.
+          </p>
+
+          <div class="social-links">
+            <a class="social-btn" href="https://github.com/Shambhavi1907" target="_blank">🐙 GitHub</a>
+            <a class="social-btn" href="https://www.linkedin.com/in/shambhavi-raj-4b703929/" target="_blank">💼 LinkedIn</a>
+          
+        </div>
+
+        <div class="profile-side">
+          <img src="profile1.jpeg" alt="Profile Photo" class="profile-pic" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section">
+    <div class="box">
+      <h2>Education</h2>
+      <table class="edu-table">
+        <tr>
+          <th>Class</th>
+          <th>Board / University</th>
+          <th>Year</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>10th</td>
+          <td>ICSE</td>
+          <td>2021</td>
+          <td>Passed</td>
+        </tr>
+        <tr>
+          <td>12th</td>
+          <td>CBSE</td>
+          <td>2023</td>
+          <td>Passed</td>
+        </tr>
+        <tr>
+          <td>B.Tech (CSE)</td>
+          <td>Pimpri Chinchwad University, Pune, Maharashtra</td>
+          <td>2023–Present</td>
+          <td>3rd Year</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="box">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card" ng-repeat="skill in skills">{{ skill }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="box">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card" ng-repeat="project in projects">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates (link to next page) -->
+  <section id="certificates" class="section" ng-non-bindable>
+    <div class="box certificates-box" style="text-align:center;">
+      <h2 class="section-title">Certificates</h2>
+      <p class="section-desc">
+        Explore my certified achievements showcasing my continuous learning and growth.
+      </p>
+      <a href="certificates.html" class="view-cert-btn" target="_blank">📜 View My Certificates</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="box">
+      <h2>Contact Me</h2>
+      <p>Email: shambhavi16123@gmail.com</p>
+      <p>Phone: 9973877820</p>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

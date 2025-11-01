@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="certificateApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates — Shambhavi Raj</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="CertController">
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Back to Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <div class="box">
+      <h2 class="section-title">My Certificates</h2>
+      <div class="cert-container">
+        <div
+          class="cert-card"
+          ng-repeat="cert in certificates"
+          ng-click="openCertificate(cert.image)"
+        >
+          <img ng-src="{{ cert1.image }}" alt="{{ cert2.title }}" />
+          <p class="cert-link">{{ cert.title }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" ng-show="showModal" ng-click="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" ng-src="{{selectedCert}}" />
+  </div>
+
+  <script src="certificates.js"></script>
+</body>
+</html>

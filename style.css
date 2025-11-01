@@ -1,0 +1,540 @@
+/* ------------------- BASE STYLES ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #ffffff 0%, #eaf3ff 100%);
+  color: #222;
+  overflow-x: hidden;
+  position: relative;
+  animation: fadeInBody 2s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------- BACKGROUND ANIMATION ------------------- */
+.background-animation .circle {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(0, 123, 255, 0.12);
+  animation: move 18s infinite ease-in-out alternate;
+  z-index: 0;
+}
+
+.circle:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 8%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.circle:nth-child(2) {
+  width: 250px;
+  height: 250px;
+  top: 55%;
+  left: 70%;
+  animation-delay: 3s;
+}
+.circle:nth-child(3) {
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  left: 40%;
+  animation-delay: 6s;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.1);
+  }
+}
+
+/* ------------------- NAVIGATION ------------------- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #007bff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 18px;
+}
+
+nav ul li {
+  margin: 0 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffeb3b;
+  text-shadow: 0 0 8px #ffeb3b;
+}
+
+/* ------------------- SECTIONS ------------------- */
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.box {
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.12);
+  padding: 70px;
+  max-width: 1100px;
+  width: 90%;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: fadeUp 1.2s ease forwards;
+  transition: all 0.4s ease;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 45px rgba(0, 123, 255, 0.25);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------- HOME ------------------- */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-side {
+  flex: 1;
+  padding-right: 40px;
+  text-align: left;
+  animation: slideLeft 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profile-side {
+  flex: 1;
+  text-align: right;
+  animation: slideRight 1.2s ease forwards;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profile-pic {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 8px solid #007bff;
+  object-fit: cover;
+  box-shadow: 0 0 50px rgba(0, 123, 255, 0.4);
+  animation: floatPic 5s ease-in-out infinite;
+}
+
+@keyframes floatPic {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ------------------- TYPING EFFECT ------------------- */
+.typing {
+  font-size: 3.8em;
+  color: #007bff;
+  font-weight: 800;
+  border-right: 4px solid #007bff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(20, end) 1s forwards, blink 0.8s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #007bff;
+  }
+}
+
+/* ------------------- TEXTS ------------------- */
+.tagline {
+  font-size: 1.9em;
+  margin-top: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.about-text {
+  font-size: 1.4em;
+  color: #444;
+  margin-top: 25px;
+  line-height: 1.8;
+}
+
+/* ------------------- BUTTONS ------------------- */
+.social-links {
+  margin-top: 40px;
+}
+
+.social-btn {
+  background: #007bff;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  margin-right: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.social-btn:hover {
+  background: #ffeb3b;
+  color: #007bff;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 123, 255, 0.3);
+}
+
+/* ------------------- EDUCATION TABLE ------------------- */
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.4em;
+  animation: fadeInCard 1.5s ease forwards;
+}
+
+.edu-table th,
+.edu-table td {
+  border: 2px solid #007bff;
+  padding: 20px;
+  text-align: center;
+}
+
+.edu-table th {
+  background: #007bff;
+  color: #fff;
+}
+
+/* ------------------- SKILLS ------------------- */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.skill-card {
+  background: #f7faff;
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  padding: 18px 25px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #007bff;
+  transition: 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.08);
+}
+
+.skill-card:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* ------------------- PROJECTS ------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-top: 25px;
+}
+
+.project-card {
+  background: #f9fbff;
+  border: 2px solid #007bff;
+  border-radius: 20px;
+  padding: 40px 25px;
+  text-align: center;
+  transition: 0.4s ease;
+  animation: fadeInCard 1.2s ease forwards;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.12);
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.25);
+}
+
+/* ------------------- CERTIFICATES (MAIN PAGE) ------------------- */
+.certificates-box {
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 70px 40px;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.certificates-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.25);
+}
+
+.section-title {
+  font-size: 2.8em;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-desc {
+  font-size: 1.4em;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* View Certificates Button */
+.view-cert-btn {
+  background: #007bff;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 35px;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.view-cert-btn:hover {
+  background: #ffeb3b;
+  color: #007bff;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.35);
+}
+
+/* ------------------- CERTIFICATES PAGE ------------------- */
+.cert-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.cert-card {
+  background: #f7faff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+  padding: 15px;
+  transition: all 0.4s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cert-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+}
+
+.cert-card img {
+  width: 280px;
+  border-radius: 10px;
+  border: 2px solid #007bff;
+}
+
+.cert-card p {
+  font-weight: 600;
+  margin-top: 10px;
+  color: #007bff;
+  font-size: 1.2em;
+}
+
+/* ------------------- MODAL ------------------- */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeInModal 0.4s ease;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  animation: zoomIn 0.4s ease;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ffeb3b;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ------------------- CONTACT ------------------- */
+#contact p {
+  font-size: 1.6em;
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 992px) {
+  .home-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-side {
+    padding: 0;
+  }
+
+  .profile-side {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+  }
+
+  .typing {
+    font-size: 3em;
+  }
+}
